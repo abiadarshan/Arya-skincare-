@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — ANYA</title>
+  <meta name="description" content="Contact ANYA, a fictional skincare studio. All contact details are placeholders.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="contact">
+
+  <main id="main" tabindex="-1">
+
+    <section class="page-intro">
+      <div class="container">
+        <span class="eyebrow">Contact</span>
+        <h1>We'd love to <em>hear from you.</em></h1>
+        <p class="lead">Questions about a treatment, or not sure where to begin? Send a message or reach us on WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="section section--flush-top">
+      <div class="container contact-layout">
+
+        <!-- contact form -->
+        <div class="contact-panel">
+          <h2 class="contact-panel__title">Send a message</h2>
+          <form id="contact-form" novalidate>
+            <div class="form-grid form-grid--2">
+              <div class="field">
+                <label for="c-name">Name</label>
+                <input class="input" type="text" id="c-name" name="name" autocomplete="name" required aria-describedby="c-name-error">
+                <p class="field-error" id="c-name-error"></p>
+              </div>
+              <div class="field">
+                <label for="c-email">Email</label>
+                <input class="input" type="email" id="c-email" name="email" autocomplete="email" required aria-describedby="c-email-error">
+                <p class="field-error" id="c-email-error"></p>
+              </div>
+              <div class="field span-2">
+                <label for="c-subject">Subject</label>
+                <select class="input" id="c-subject" name="subject" required aria-describedby="c-subject-error">
+                  <option value="">Choose a subject</option>
+                  <option>Treatment enquiry</option>
+                  <option>Booking question</option>
+                  <option>Gift or group visit</option>
+                  <option>Something else</option>
+                </select>
+                <p class="field-error" id="c-subject-error"></p>
+              </div>
+              <div class="field span-2">
+                <label for="c-message">Message</label>
+                <textarea class="input" id="c-message" name="message" rows="6" maxlength="1000" required aria-describedby="c-message-error c-message-help"></textarea>
+                <p class="field-help" id="c-message-help">Please don't include medical or health information.</p>
+                <p class="field-error" id="c-message-error"></p>
+              </div>
+            </div>
+            <div class="btn-row">
+              <button class="btn btn--primary" type="submit">Send demo message</button>
+            </div>
+            <p class="field-help contact-note">Demonstration form: messages are not sent to a real studio.</p>
+          </form>
+
+          <div class="form-success" id="contact-success" hidden tabindex="-1">
+            <p class="eyebrow">Demo only</p>
+            <h3>Thank you, <span id="contact-success-name"></span>.</h3>
+            <p>Your message was checked and looks good, but this is a demonstration form, so it has <strong>not</strong> been sent to a real studio.</p>
+            <div class="btn-row">
+              <button class="btn" type="button" id="contact-reset">Write another message</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- studio details -->
+        <aside class="contact-details" aria-label="Studio details">
+          <div class="contact-block">
+            <h2 class="site-footer__title">Studio address <span class="tag">fictional</span></h2>
+            <address data-contact="address"></address>
+          </div>
+          <div class="contact-block">
+            <h2 class="site-footer__title">Telephone <span class="tag">fictional</span></h2>
+            <p data-contact="phone"></p>
+          </div>
+          <div class="contact-block">
+            <h2 class="site-footer__title">Opening hours <span class="tag">demo</span></h2>
+            <ul class="hours-list" data-hours></ul>
+          </div>
+          <div class="contact-block contact-actions">
+            <a class="btn btn--primary" href="#" data-whatsapp="general">Chat on WhatsApp</a>
+            <a class="btn" href="booking.html">Book Appointment</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- map placeholder (no real location) -->
+    <section class="section section--flush-top">
+      <div class="container">
+        <div class="map-placeholder" role="img" aria-label="Map placeholder. ANYA is a fictional studio with no real location.">
+          <div>
+            <p class="eyebrow">Map placeholder</p>
+            <p>A map will appear here once a real studio address is available. ANYA is fictional, so no location is shown.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

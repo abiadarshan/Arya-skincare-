@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Treatments — ANYA</title>
+  <meta name="description" content="Facial treatments and skincare consultations at ANYA, a fictional skincare studio.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-page="treatments">
+
+  <main id="main" tabindex="-1">
+
+    <section class="page-intro">
+      <div class="container">
+        <span class="eyebrow">Treatments</span>
+        <h1>Facials, gently <em>considered.</em></h1>
+        <p class="lead">Each of our non-medical facial treatments starts with a short conversation about your skin and preferences. Choose the experience that feels right, or begin with a consultation if you're unsure.</p>
+      </div>
+    </section>
+
+    <!-- all four treatments (from js/config.js) -->
+    <section class="section section--flush-top">
+      <div class="container">
+        <div class="card-grid card-grid--four" data-services="all"></div>
+        <p class="price-note">All prices and durations are fictional demonstration values for this prototype.</p>
+      </div>
+    </section>
+
+    <!-- WhatsApp enquiry -->
+    <section class="section section--beige">
+      <div class="container split">
+        <div class="split__text">
+          <span class="eyebrow">Not sure where to start?</span>
+          <h2>Ask us about a treatment.</h2>
+          <p>Send us a message and we'll help you choose a facial that suits your skin and your schedule. You can also book The Skin Consultation for a relaxed, 20-minute conversation in the studio.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="#" data-whatsapp="treatment">Enquire on WhatsApp</a>
+            <a class="btn" href="booking.html?service=consultation">Book a Consultation</a>
+          </div>
+        </div>
+        <div class="split__media">
+          <img src="https://images.unsplash.com/photo-1714636608872-048fc9231892?auto=format&fit=crop&w=1100&q=75"
+               alt="Close-up of soft, swirled ivory skincare cream"
+               loading="lazy" width="1100" height="1375">
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container container--narrow">
+        <span class="eyebrow">Questions</span>
+        <h2 class="heading-gap">Before your visit.</h2>
+        <div class="faq">
+          <details>
+            <summary>Which treatment should I choose?</summary>
+            <p>If you're new to ANYA or unsure what would suit you, The Skin Consultation is a good starting point. We'll talk through your current routine and suggest a suitable studio treatment.</p>
+          </details>
+          <details>
+            <summary>Are your treatments medical?</summary>
+            <p>No. ANYA offers non-medical facial treatments and skincare consultations. We don't diagnose or treat skin conditions. If you have a skin concern, please speak with a qualified medical professional.</p>
+          </details>
+          <details>
+            <summary>Is The Renewal Facial right for everyone?</summary>
+            <p>Not always. Because it focuses on exfoliation, its suitability is assessed before treatment. If it isn't the right fit on the day, we'll suggest a gentler alternative.</p>
+          </details>
+          <details>
+            <summary>How early should I arrive?</summary>
+            <p>Arriving around ten minutes early gives you time to settle in and chat with your therapist before the treatment begins.</p>
+          </details>
+          <details>
+            <summary>Can I change or cancel my appointment?</summary>
+            <p>This website is a prototype, so bookings made here are demonstrations only. In a live studio, changes would usually be handled by message or phone.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-band">
+      <div class="container container--narrow center">
+        <h2>Found the right treatment?</h2>
+        <p>Choose a date and time that suits you.</p>
+        <div class="btn-row">
+          <a class="btn btn--light" href="booking.html">Book an Appointment</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/services.js"></script>
+</body>
+</html>

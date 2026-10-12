@@ -1,0 +1,8 @@
+# local tool settings
+.claude/
+
+# original source files (web-ready copies live in assets/)
+hf_*.mp4
+droplet image.png
+
+__pycache__/

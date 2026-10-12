@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book an Appointment — ANYA</title>
+  <meta name="description" content="Demonstration booking form for ANYA, a fictional skincare studio.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/booking.css">
+</head>
+<body data-page="booking">
+
+  <main id="main" tabindex="-1">
+
+    <section class="page-intro">
+      <div class="container container--narrow">
+        <span class="eyebrow">Appointments</span>
+        <h1>Book an appointment.</h1>
+        <p class="lead">Choose a treatment, a date and a time, then review your details before confirming.</p>
+        <p class="notice booking-disclaimer">This is a demonstration booking form. Your appointment has not been submitted to a real studio.</p>
+      </div>
+    </section>
+
+    <section class="section section--flush-top">
+      <div class="container container--narrow">
+
+        <!-- progress indicator -->
+        <ol class="steps" aria-label="Booking steps">
+          <li class="steps__item" data-step-label="1"><span>Treatment</span></li>
+          <li class="steps__item" data-step-label="2"><span>Date</span></li>
+          <li class="steps__item" data-step-label="3"><span>Time</span></li>
+          <li class="steps__item" data-step-label="4"><span>Details</span></li>
+          <li class="steps__item" data-step-label="5"><span>Review</span></li>
+        </ol>
+
+        <form class="booking" id="booking-form" novalidate>
+
+          <!-- STEP 1: service -->
+          <fieldset class="booking__step" data-step="1">
+            <legend><span class="booking__num">Step 1 of 5</span>Choose a treatment</legend>
+            <div class="service-options" id="service-options"></div>
+            <p class="field-error" id="service-error"></p>
+            <div class="booking__nav">
+              <span></span>
+              <button class="btn btn--primary" type="button" data-next>Continue</button>
+            </div>
+          </fieldset>
+
+          <!-- STEP 2: date -->
+          <fieldset class="booking__step" data-step="2" hidden>
+            <legend><span class="booking__num">Step 2 of 5</span>Choose a date</legend>
+            <div class="booking__cols">
+              <div class="field">
+                <label for="date">Appointment date</label>
+                <input class="input" type="date" id="date" name="date" aria-describedby="date-error date-help">
+                <p class="field-help" id="date-help">You can book up to 60 days ahead.</p>
+                <p class="field-error" id="date-error"></p>
+              </div>
+              <div class="hours-box">
+                <p class="field-label">Opening hours <span class="tag">demo</span></p>
+                <ul class="hours-list" data-hours></ul>
+                <p class="field-help">Sample hours for this prototype, not a real studio schedule.</p>
+              </div>
+            </div>
+            <div class="booking__nav">
+              <button class="btn" type="button" data-back>Back</button>
+              <button class="btn btn--primary" type="button" data-next>Continue</button>
+            </div>
+          </fieldset>
+
+          <!-- STEP 3: time -->
+          <fieldset class="booking__step" data-step="3" hidden>
+            <legend><span class="booking__num">Step 3 of 5</span>Choose a time</legend>
+            <p class="field-help" id="slot-date-label"></p>
+            <div id="slot-groups"></div>
+            <p class="field-help">Availability is randomly generated sample data for demonstration only.</p>
+            <p class="field-error" id="time-error"></p>
+            <div class="booking__nav">
+              <button class="btn" type="button" data-back>Back</button>
+              <button class="btn btn--primary" type="button" data-next>Continue</button>
+            </div>
+          </fieldset>
+
+          <!-- STEP 4: details -->
+          <fieldset class="booking__step" data-step="4" hidden>
+            <legend><span class="booking__num">Step 4 of 5</span>Your details</legend>
+            <div class="form-grid form-grid--2">
+              <div class="field span-2">
+                <label for="name">Full name</label>
+                <input class="input" type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+                <p class="field-error" id="name-error"></p>
+              </div>
+              <div class="field">
+                <label for="email">Email address</label>
+                <input class="input" type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+                <p class="field-error" id="email-error"></p>
+              </div>
+              <div class="field">
+                <label for="phone">Phone number</label>
+                <input class="input" type="tel" id="phone" name="phone" autocomplete="tel" required aria-describedby="phone-error">
+                <p class="field-error" id="phone-error"></p>
+              </div>
+              <div class="field span-2">
+                <label for="notes">Additional notes <span class="optional">(optional)</span></label>
+                <textarea class="input" id="notes" name="notes" rows="4" maxlength="400" aria-describedby="notes-help"></textarea>
+                <p class="field-help" id="notes-help">Preferences only, such as a preferred therapist or accessibility needs. Please don't include medical or health information.</p>
+              </div>
+            </div>
+            <div class="booking__nav">
+              <button class="btn" type="button" data-back>Back</button>
+              <button class="btn btn--primary" type="button" data-next>Review booking</button>
+            </div>
+          </fieldset>
+
+          <!-- STEP 5: review -->
+          <fieldset class="booking__step" data-step="5" hidden>
+            <legend><span class="booking__num">Step 5 of 5</span>Review and confirm</legend>
+            <dl class="summary" id="review"></dl>
+            <p class="notice">Confirming creates a demo booking only. Nothing is sent, reserved or paid for.</p>
+            <p class="field-error" id="review-error"></p>
+            <div class="booking__nav">
+              <button class="btn" type="button" data-back>Back</button>
+              <button class="btn btn--primary" type="submit">Confirm demo booking</button>
+            </div>
+          </fieldset>
+        </form>
+
+        <!-- confirmation panel (shown after confirming) -->
+        <section class="confirmation" id="confirmation" hidden tabindex="-1" aria-labelledby="confirmation-title">
+          <span class="confirmation__mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="23" fill="none" stroke="currentColor" stroke-width="1"/><path d="M15 24.5l6 6 12-13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
+          <p class="confirmation__label">Demo booking confirmation</p>
+          <h2 id="confirmation-title">Thank you, <span id="confirm-name"></span>.</h2>
+          <p class="confirmation__text">Here are the details of your demonstration appointment.</p>
+          <dl class="summary" id="confirm-details"></dl>
+          <p class="notice">This is a demonstration booking form. Your appointment has not been submitted to a real studio. No email, message or payment has been sent, and these details are cleared when you leave or refresh the page.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="index.html">Return home</a>
+            <a class="btn" href="treatments.html">Browse treatments</a>
+            <button class="btn" type="button" id="book-another">Make another demo booking</button>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>

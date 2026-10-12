@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ANYA — A considered approach to skincare</title>
+  <meta name="description" content="ANYA is a fictional boutique skincare and facial studio offering personalized facial experiences.">
+
+  <!-- decide before the page paints whether the intro should show (avoids a flash).
+       The key must match ANYA_CONFIG.intro.sessionKey in js/config.js -->
+  <script>
+    document.documentElement.classList.add("js");
+    try {
+      if (sessionStorage.getItem("anya-intro-seen")) document.documentElement.classList.add("intro-done");
+    } catch (e) {}
+  </script>
+
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/intro.css">
+</head>
+<body data-page="home">
+
+  <!-- Opening intro: the Higgsfield droplet video. Source path is set in js/config.js -->
+  <section class="intro" id="intro" aria-label="ANYA opening animation">
+    <video class="intro__video" muted playsinline preload="auto" aria-hidden="true"></video>
+    <img class="intro__fallback" alt="ANYA wordmark on a soft beige surface">
+    <button class="intro__skip" type="button">Skip intro</button>
+  </section>
+
+  <main id="main" tabindex="-1">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__media">
+        <img src="https://images.unsplash.com/photo-1581182800629-7d90925ad072?auto=format&fit=crop&w=2000&q=75"
+             alt="A woman with eyes closed and softly glowing skin in warm natural light"
+             width="2000" height="1333" fetchpriority="high">
+      </div>
+      <div class="hero__content">
+        <span class="eyebrow">Skincare &amp; facial studio</span>
+        <h1>Your skin, thoughtfully cared for.</h1>
+        <p>Personalized facial experiences designed around your skin's needs, preferences, and rituals.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="booking.html">Book an Appointment</a>
+          <a class="btn" href="treatments.html">Explore Treatments</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section">
+      <div class="container split">
+        <div class="split__text">
+          <span class="eyebrow">About ANYA</span>
+          <h2>A more considered approach to skincare.</h2>
+          <p class="lead">ANYA is a small studio dedicated to personalized facial experiences, gentle skincare rituals, and attentive consultations.</p>
+          <p>Every visit begins with a conversation about your skin, your routine at home and how you'd like to feel afterwards. From there, each treatment is shaped around you, in a calm and unhurried studio environment.</p>
+          <div class="btn-row">
+            <a class="text-link" href="philosophy.html">Read our philosophy</a>
+          </div>
+        </div>
+        <div class="split__media split__media--framed split__media--wide">
+          <img src="https://images.unsplash.com/photo-1693578538512-fc66f318c833?auto=format&fit=crop&w=1100&q=75"
+               alt="A calm treatment room with warm lighting, wooden panels and lounge chairs"
+               loading="lazy" width="1100" height="880">
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured treatments (cards come from js/config.js) -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Featured treatments</span>
+            <h2>Facials shaped around you.</h2>
+          </div>
+          <p>Three of our most-loved studio rituals. Every treatment begins with a short conversation about your skin.</p>
+        </div>
+        <div class="card-grid" data-services="featured"></div>
+        <p class="price-note">Prices shown are fictional demonstration prices. <a href="treatments.html">View all treatments</a></p>
+      </div>
+    </section>
+
+    <!-- Brand philosophy -->
+    <section class="section">
+      <div class="container split split--reverse">
+        <div class="split__text">
+          <span class="eyebrow">Our philosophy</span>
+          <h2>Thoughtful routines, <em>individual</em> care.</h2>
+          <p>We believe good skincare is less about doing more and more about doing what suits you. Our therapists take the time to understand your preferences before recommending anything.</p>
+          <p>The result is a treatment experience that feels welcoming, considered and entirely your own.</p>
+          <div class="btn-row">
+            <a class="btn" href="philosophy.html">Discover Our Philosophy</a>
+          </div>
+        </div>
+        <div class="split__media">
+          <img src="assets/images/droplet.jpg"
+               alt="A single clear, golden droplet of skincare oil against a soft beige wall"
+               loading="lazy" width="1024" height="1024">
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section--beige">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Client words</span>
+            <h2>How a visit feels.</h2>
+          </div>
+          <p><span class="tag">Demonstration content</span><br>These testimonials are fictional examples written for this prototype. They are not real customer reviews.</p>
+        </div>
+        <div class="quotes">
+          <figure class="quote">
+            <blockquote>“The consultation felt like a real conversation. I left with a routine that actually fits my week.”</blockquote>
+            <figcaption>Sample client A &middot; fictional</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>“Calm from the moment you walk in. The Hydration Ritual was exactly the quiet hour I needed.”</blockquote>
+            <figcaption>Sample client B &middot; fictional</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>“Nothing felt rushed or pushed on me. Everything was explained gently and clearly.”</blockquote>
+            <figcaption>Sample client C &middot; fictional</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final call to action -->
+    <section class="section cta-band">
+      <div class="container container--narrow center">
+        <span class="eyebrow">Your appointment</span>
+        <h2>Make time for your skin.</h2>
+        <p>Choose a treatment and a time that suits you, or send us a message if you'd like help deciding.</p>
+        <div class="btn-row">
+          <a class="btn btn--light" href="booking.html">Book an Appointment</a>
+          <a class="btn btn--light" href="#" data-whatsapp="general">Chat with Us on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/intro.js"></script>
+</body>
+</html>
